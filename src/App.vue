@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <top-header />
+
+<router-view :listData="listData"> </router-view>
+
+  <bottom-footer />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import header from './components/header.vue'
+import footer from './components/footer.vue'
+import listData from './listData.js'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'top-header':header,
+    'bottom-footer':footer,
+ 
+  },
+  data(){
+    return{
+      listData:listData,
+    }
   }
 }
 </script>
